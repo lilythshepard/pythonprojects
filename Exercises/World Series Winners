@@ -1,0 +1,15 @@
+def main():
+    team_wins = []
+    world_series_wins = 0
+    infile = open('WorldSeriesWinners.txt', 'r')
+    for line in infile:
+        team_wins.append(line.rstrip())
+    infile.close()
+    
+    how_many = input("Please enter the name of the team to search how many times they have won the world series from "
+                     "1903-2009: ")
+    for i in team_wins:
+        if i == how_many:
+            world_series_wins += 1
+    print(how_many, "Has won the world series ", world_series_wins, "times since 1903-2009")
+main()
