@@ -1,0 +1,15 @@
+def calculate_paint_labor(wall_space, paint_per_gallon):
+    print('The number of gallons of paint you require is: ', format(wall_space / 112, '.2f'))
+    print('the hours of labor required is: ', format(wall_space / 112 * 8, '.2f'))
+    print('the cost of the paint is $', format(wall_space/112* paint_per_gallon, '.2f'))
+    print('the labor charge is $ ', format(wall_space/112 * 8 * 35, '.2f'))
+    print('the total cost of the job is $', format(wall_space/112 * paint_per_gallon + wall_space / 112 * 8 * 35, '.2f'))
+
+
+
+def main():
+    paint_price = float(input("Please enter the price of paint per gallon: $"))
+    sq_foot = int(input("Please enter how many square feet of wall space you want painted: "))
+    calculate_paint_labor(sq_foot, paint_price)
+
+main()
