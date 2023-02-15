@@ -1,0 +1,25 @@
+month = ('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December') 
+days = (31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)
+def welcome():
+    print("Ayooooo heres ur exercise info bruh")
+    print("______________________________________________________")
+    print('')
+def step_tracker():
+    stepcounter = open('steps.txt', 'r')
+    monthcount = 0
+    for num in range(1, 13):
+        totalsteps = 0
+        count = 0
+        average = 0
+        for count in range(1, days[monthcount] + 1):
+            steps = int(stepcounter.readline())
+            totalsteps += steps
+        average = totalsteps / days[monthcount]
+        print('the average steps taken for the month of ' + month[monthcount] + ' is ' + format(average, ',.1f') + ' steps.')
+        monthcount = monthcount + 1
+
+def main():
+    welcome()
+    step_tracker()
+
+main()
