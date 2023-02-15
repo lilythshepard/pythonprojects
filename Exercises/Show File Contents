@@ -1,0 +1,11 @@
+def display_file_contents(filename):
+    file_handler = open(filename)
+    for i, line in enumerate(file_handler):
+        print("Line ", i, " : ", line, end='')
+    file_handler.close()
+
+def main():
+    name = input("Please enter the name of the file: ")
+    display_file_contents(name)
+
+main()
