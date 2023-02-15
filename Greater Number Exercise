@@ -1,0 +1,12 @@
+def max(num1, num2):
+    if num1 > num2:
+        print(num1, " is the greater number.")
+        return num1
+    else:
+        print(num2, "is the greater value.")
+        return num2
+def main():
+    num1 = int(input("Please enter the first number: "))
+    num2 = int(input("Please enter the second number: "))
+    max(num1, num2)
+main()
