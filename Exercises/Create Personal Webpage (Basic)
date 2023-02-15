@@ -1,0 +1,19 @@
+name = input("Enter your name: ")
+description = input("Describe yourself: ")
+
+html = open('personal_webpage.html', 'x')
+
+html.write('''
+<html>
+<head>
+</head>
+<body>
+    <center>
+        <h1>{}</h1>
+    </center>
+    <hr />
+    {}
+    <hr />
+</body>
+</html>
+'''.format(name, description))
