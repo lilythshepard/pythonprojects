@@ -1,0 +1,11 @@
+course_rooms = {'CS101': 3004, 'CS102': 4501, 'CS103': 6755, 'NT110': 1244, 'CM241': 1411}
+course_instruc = {'CS101': 'Haynes', 'CS102': 'Alvarado', 'CS103': 'Rich', 'NT110': 'Burke', 'CM241': 'Lee'}
+course_meet_times = {'CS101': '8:00 AM', 'CS102': '9:00 AM', 'CS103': '10:00 AM', 'NT110': '11:00 AM', 'CM241': '1:00 PM'}
+course_num = input("Please enter the course number you want information on: ")
+print("For course number ", course_num, "the following information was found: ")
+room_num = course_rooms.get(course_num)
+instruct = course_instruc.get(course_num)
+meet_time = course_meet_times.get(course_num)
+print("Room number: ", room_num)
+print("Instructor name: ", instruct)
+print("Meeting time: ", meet_time)
