@@ -1,0 +1,20 @@
+def count_vowel(string):
+    accumulator = 0
+    for character in string:
+        if character.lower() in ['a', 'e', 'i', 'o', 'u']:
+            accumulator += 1
+    return accumulator
+
+def count_consonant(string):
+    counter = 0
+    for character in string:
+        if character.lower() not in ['a', 'e', 'i', 'o', 'u']:
+            counter += 1
+    return counter
+
+def main():
+    check_against = input("Please enter a string to count its vowels and consonants: ")
+    vowels = count_vowel(check_against)
+    consonants = count_consonant(check_against)
+    print("Your string contained ", vowels, "vowels, and ", consonants, "consonants.")
+main()
