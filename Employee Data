@@ -1,0 +1,56 @@
+class Employee:
+    def __init__(self, name, number):
+        self.__name = name
+        self.__number = number
+
+    def set_name(self, name):
+        self.__name = name
+
+    def set_number(self, number):
+        self.__number = number
+
+    def get_name(self):
+        return self.__name
+
+    def get_number(self):
+        return self.__number
+
+class ProductionWorker(Employee):
+    def __init__(self, name, number, shift_hours, pay_rate):
+        Employee.__init__(self, name, number)
+        self.__shift_hours = shift_hours
+        self.__pay_rate = pay_rate
+
+    def set_shift_hours(self, shift_hours):
+        self.__shift_hours = shift_hours
+
+    def set_pay_rate(self, pay_rate):
+        self.__pay_rate = pay_rate
+
+    def get_shift_hours(self):
+        if self.__shift_hours == 1:
+            return "Day"
+        if self.__shift_hours == 2:
+            return "Night"
+
+    def get_pay_rate(self):
+        return self.__pay_rate
+
+import worker
+def main():
+    print("Please enter the following Data: ")
+
+    name = input("Please enter the employee's name: ")
+    number = int(input("Please enter the employee's employee number: "))
+    shift = int(input("Please enter the shift number (1 or 2): "))
+    hourly_pay = float(input("Please enter the employee's hourly pay rate: "))
+
+    employee = worker.ProductionWorker(name, number, shift, hourly_pay)
+
+    print("Here is the data you entered: ")
+    print("-----------------------------------")
+    print("Name: ", employee.get_name())
+    print("Employee Number: ", employee.get_number())
+    print("Shift: ", employee.get_shift_hours())
+    print("Hourly Pay Rate: $", format(employee.get_pay_rate(), '.2f'), sep="")
+main()
