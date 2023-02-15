@@ -1,0 +1,18 @@
+def guess(computer_num):
+    number = int(input("Please guess a number between 1-100: "))
+    while computer_num != number:
+        if number > computer_num:
+            print("Too high!")
+            number = int(input("Please guess a number between 1-100: "))
+        elif number < computer_num:
+            print("Too low!")
+            number = int(input("Please guess a number between 1-100: "))
+    print("You did it! Congratulations!")
+
+def main():
+    yes = 'y'
+    while yes == 'y' or yes == 'Y':
+        computer_num = random.randrange(1,101)
+        guess(computer_num)
+        yes = input("Would you like to play again? Type Y or y to continue!")
+main()
