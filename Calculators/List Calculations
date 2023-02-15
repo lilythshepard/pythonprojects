@@ -1,0 +1,16 @@
+def main():
+    enter_numbers = []
+    for num in range(20):
+        user_input = int(input("Please enter a positive number: "))
+        enter_numbers.append(user_input)
+    total_num_amount = sum(enter_numbers)
+    average = total_num_amount/len(enter_numbers)
+    lowest = min(enter_numbers)
+    highest = max(enter_numbers)
+    print('Here is the initially input list: ', enter_numbers)
+    print('Here is the lowest value in the list: ', lowest)
+    print('Here is the highest value in the list: ', highest)
+    print('Here is the total of all the numbers on the list: ', total_num_amount)
+    print('And here is the average of all the numbers on the list: ', average)
+
+main()
