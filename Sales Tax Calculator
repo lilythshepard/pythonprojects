@@ -1,0 +1,10 @@
+def get_sales_taxes(total_sales):
+    print("The state sales tax is $", format(total_sales * 0.05, '.2f'))
+    print('the county sales tax is: $ ', format(total_sales * .025, '.2f'))
+    print('this means the total sales tax is $', format((total_sales*0.05)+(total_sales*0.025), '.2f'))
+
+def main():
+    sales = float(input("enter the total sales for the month: $"))
+    get_sales_taxes(sales)
+
+main()
