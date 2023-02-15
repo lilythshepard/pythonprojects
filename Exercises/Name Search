@@ -1,0 +1,21 @@
+def main():
+    boys_names = []
+    girls_names = []
+    file_one = open('BoyNames.txt', 'r')
+    for bname in file_one:
+        boys_names.append(bname.rstrip())
+    file_one.close()
+    file_two = open('GirlNames.txt', 'r')
+    for gname in file_two:
+        girls_names.append(gname.rstrip())
+    file_two.close()
+
+    search_name = input("Please enter the name you'd like to look for among the most popular: ")
+    if search_name in boys_names:
+        print(search_name, "was among the 200 most popular boys' names! Nice!!")
+    elif search_name in girls_names:
+        print(search_name, "was among the 200 most popular girls' names! Nice!!")
+    else:
+        print("Sorry, ", search_name, "was not among the 200 most popular names for boys or girls. ")
+
+main()
