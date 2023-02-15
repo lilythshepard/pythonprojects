@@ -1,0 +1,27 @@
+filename1 = input("Please enter the name of the first file:")
+filename2 = input("Please enter the name of the second file: ")
+infile1 = open(filename1, 'r')
+infile2 = open(filename2, 'r')
+lines = infile1.readlines()
+lines2 = infile2.readlines()
+set1 = set()
+for line in lines:
+    for word in line.split():
+        set1.add(word)
+infile1.close()
+set2 = set()
+for line2 in lines2:
+    for word2 in line2.split():
+        set2.add(word2)
+infile2.close()
+all_unique_words = set1.union(set2)
+in_both = set1.intersection(set2)
+infirst = set1.difference(set2)
+insecond = set2.difference(set1)
+symmetric_dif = set1.symmetric_difference(set2)
+print("This is a heckin' doozy, but here's your info:")
+print("All unique words in both files: ", all_unique_words)
+print("All the words that appear in both files: ", in_both)
+print("All the words in the first but not the second file: ", infirst)
+print("And all the words in the second but not the first file: ", insecond)
+print("Finally, all the words the two files don't share: ", symmetric_dif)
