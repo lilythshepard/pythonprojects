@@ -1,0 +1,10 @@
+def get_calories(fat_grams, carb_grams):
+    calories_from_fat = fat_grams * 9
+    calories_from_carbs = carb_grams * 4
+    print("You have ", calories_from_fat, ' calories resulting from fat, and ', calories_from_carbs, 'calories '
+                                                                                                     'resulting from '
+                                                                                                     'carbs.')
+    return calories_from_fat, calories_from_carbs
+fat = int(input("Please enter the number of fat grams you consumed today: "))
+carbs = int(input("Please enter the number of carbs you consumed today: "))
+get_calories(fat, carbs)
