@@ -1,0 +1,40 @@
+class Pet: (imported to a separate file)
+    def __init__(self, name, animal_type, age):
+        self.__name = name
+        self.__animal_type = animal_type
+        self.__age = age
+
+    def set_name(self, name):
+        self.__name = name
+
+    def set_animal_type(self, animal_type):
+        self.__animal_type = animal_type
+
+    def set_age(self, age):
+        self.__age = age
+
+    def get_name(self, name):
+        return self.__name
+
+    def get_animal_type(self, animal_type):
+        return self.__animal_type
+
+    def get_age(self, age):
+        return self.__age
+
+import pet
+
+def main():
+    name = input('Enter an animal name: ')
+    animal_type = input("Enter the animal's type: ")
+    age = int(input("Enter the animal's age: "))
+    my_animal=pet.Pet(name, animal_type, age)
+
+    print("Pet Data: ")
+    print("--------------------")
+    print("Name: ", my_animal.get_name(name))
+    print("Animal Type: ", my_animal.get_animal_type(animal_type))
+    print("Animal's Age: ", my_animal.get_age(age))
+    print("---------------------")
+
+main()
