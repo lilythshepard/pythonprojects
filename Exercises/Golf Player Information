@@ -1,0 +1,23 @@
+def golf_player_file(file):
+    file_handler = open(file, 'w')
+    while True:
+        player_name = input("Enter the name of the golf player. Enter 0 to exit.")
+        if player_name == "0":
+            break
+        else:
+            while True:
+                try:
+                    player_score = int(input("Please enter their score: "))
+                    break
+                except ValueError:
+                    print("You must enter a number: ")
+                    continue
+            file_handler.write(player_name + "\t" + str(player_score) + "\n")
+    file_handler.close()
+
+def main():
+    name = input("Please enter the name of the file: ")
+    golf_player_file(name)
+    print("All the golf player information is written to the file: ", name)
+
+main()
