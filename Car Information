@@ -1,0 +1,34 @@
+class Car:
+    def __init__(self, year_model, make, speed=0):
+        self.year_model = year_model
+        self.make = make
+        self.speed = speed
+
+    def accelerate(self):
+        self.speed = self.speed + 5
+
+    def brake(self):
+        self.speed = self.speed - 5
+
+    def get_speed(self):
+        print("Current speed: ", self.speed)
+
+import car
+def main():
+    new_car = car.Car("2021", "Prius C", 45)
+    for i in range(5):
+        if i == 0:
+            print("Speeding up....")
+        else:
+            print("speeding up again...")
+        new_car.accelerate()
+        new_car.get_speed()
+
+    for i in range(5):
+        if i == 0:
+            print("Slow down buckaroo!")
+        else:
+            print("A little more!")
+        new_car.brake()
+        new_car.get_speed()
+main()
