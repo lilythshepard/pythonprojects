@@ -1,0 +1,37 @@
+def write_random_numbers(filename, how_many):
+    file_handler = open(filename, 'w')
+    for i in range(int(how_many)):
+        line = str(random.randint(1, 501))
+        file_handler.write(line + "\n")
+    file_handler.close()
+
+def display_file(filename):
+    file_handler = open(filename, 'r')
+    for i, line in enumerate(file_handler):
+        print("Line ", i, " : ", line)
+    file_handler.close()
+
+def sum_of_numbers(filename):
+    file_handler = open(filename, 'r')
+    sum_numbers = 0
+    random_count = 0
+    for line in file_handler:
+        try:
+            sum_numbers += int(line)
+            random_count += 1
+        except ValueError:
+            continue
+    file_handler.close()
+    return sum_numbers, random_count
+
+def main():
+    file = input("Enter the name of the file: ")
+    limit = input("Enter the number of random numbers to generate to the file: ")
+    write_random_numbers(file, limit)
+    print("File written successfully.")
+    display_file(file)
+    sum_numbers, random_count = sum_of_numbers(file)
+    print("The total random numbers in the file is: ", random_count)
+    print("And the sum of those numbers is: ", sum_numbers)
+
+main()
