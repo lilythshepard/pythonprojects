@@ -1,0 +1,40 @@
+#The Luoshu, Lo Shu, or Nine Halls Diagram is an ancient Chinese diagram and named for the Luo River near Luoyang, Henan. The Luoshu appears in myths concerning the invention of writing by Cangjie and other culture heroes. It is a unique normal magic square of order three.
+rows = 3
+cols = 3
+
+def func(cube):
+    row1 = 0
+    row2 = 0
+    row3 = 0
+    col1 = 0
+    col2 = 0
+    col3 = 0
+    dia1 = 0
+    dia2 = 0
+
+    for i in range(rows):
+        row1+=cube[0][i]
+        row2+=cube[1][i]
+        row3+=cube[2][i]
+        col1+=cube[i][0]
+        col2+=cube[i][1]
+        col3+=cube[i][2]
+
+    for i in range(rows):
+        dia1+= cube[i][i]
+
+    for i in range(rows):
+        dia2+= cube[i][rows-i-1]
+
+    if (row1 == row2 == row3 == col1 == col2 == col3 == dia1 == dia2):
+        print("The list is a Loushu Square!")
+    else:
+        print("The list is not a Loushu Square.")
+
+def main():
+    magic = [[4, 9, 2],
+             [3, 5, 7],
+             [8, 1, 6]]
+    func(magic)
+
+main()
