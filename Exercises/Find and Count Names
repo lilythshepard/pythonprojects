@@ -1,0 +1,14 @@
+def count_lines(filename):
+    file_handler = open(filename, 'r')
+    num_names = 0
+    for line in file_handler:
+        try:
+            line = float(line)
+        except ValueError:
+            num_names += 1
+    file_handler.close()
+    return num_names
+def main():
+    file = input("enter the name of the file: ")
+    number_of_names = count_lines(file)
+    print("The number of names in this list is: ", number_of_names)
