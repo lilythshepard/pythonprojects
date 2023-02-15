@@ -1,0 +1,139 @@
+class Patient:
+    def __init__(self, name, address, city, state, zip, phone, contact, ec_phone):
+        self.name = name
+        self.address = address
+        self.city = city
+        self.state = state
+        self.zip = zip
+        self.phone = phone
+        self.contact = contact
+        self.ec_phone = ec_phone
+
+    def set_name(self, name):
+        self.name = name
+
+    def set_address(self, address):
+        self.address = address
+
+    def set_city(self, city):
+        self.city = city
+
+    def set_state(self, state):
+        self.state = state
+
+    def set_zip(self, zip):
+        self.zip = zip
+
+    def set_phone(self, phone):
+        self.phone = phone
+
+    def set_contact(self, contact):
+        self.contact = contact
+
+    def set_ec_phone(self, ec_phone):
+        self.ec_phone = ec_phone
+
+    def get_name(self, name):
+        return self.name
+
+    def get_address(self, address):
+        return self.address
+
+    def get_city(self, city):
+        return self.city
+
+    def get_state(self, state):
+        return self.state
+
+    def get_zip(self, zip):
+        return self.zip
+
+    def get_phone(self, phone):
+        return self.phone
+
+    def get_contact(self, contact):
+        return self.contact
+
+    def get_ec_phone(self, ec_phone):
+        return self.ec_phone
+
+    def __str__(self):
+        return (
+                """
+                Patient Name: %s
+                Address: %s
+                City: %s
+                State: %s
+                Zip: %d
+                Phone number: %d
+                Emergency Contact: %s
+                Emergency Contact Phone: %d
+                """ % (
+            self.name, self.address,
+            self.city, self.state,
+            self.zip, self.phone,
+            self.contact, self.ec_phone
+        )
+        )
+
+
+class Procedure:
+    def __init__(self, p_name, date, doctor, charge):
+        self.p_name = p_name
+        self.date = date
+        self.doctor = doctor
+        self.charge = charge
+
+    def set_p_name(self, p_name):
+        self.p_name = p_name
+
+    def set_date(self, date):
+        self.date = date
+
+    def set_doctor(self, doctor):
+        self.doctor = doctor
+
+    def set_charge(self, charge):
+        self.charge = charge
+
+    def get_p_name(self, p_name):
+        return self.p_name
+
+    def get_date(self, date):
+        return self.date
+
+    def get_doctor(self, doctor):
+        return self.doctor
+
+    def get_charge(self, charge):
+        return self.charge
+
+    def __str__(self):
+        return (
+                """
+                Procedure Name: %s
+                Date: %s
+                Practitioner: %s
+                Charge: %s
+                """ % (
+            self.p_name, self.date,
+            self.doctor, self.charge,
+        )
+        )
+
+import patient
+
+def main():
+    print("Loading patient info....")
+    victim = patient.Patient("Lilyth Persephone Shepard", "15 Frances st.", "Chapel Hill", "NC", 27517, 9198861469, "Sally Peterson", 9199495810)
+    print("---------------------------------------------------------------------------------------------------")
+    print(victim)
+    print("Loading procedure information...")
+    print("----------------------------------------------------------")
+    p1 = patient.Procedure("Physical Exam", "Today's Date", "Dr. Irvine", "250.00")
+    p2 = patient.Procedure("X-ray", "Today's Date", "Dr. Jamison", "500.00")
+    p3 = patient.Procedure("Blood Test", "Today's Date", "Dr. Smith", "200.00")
+    procedure_list = [p1, p2, p3]
+    for procedures in procedure_list:
+        print(procedures)
+main()
