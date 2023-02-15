@@ -1,0 +1,22 @@
+def determines_stuff(filename):
+    infile = open(filename, 'r')
+    uppercase, lowercase, digits, whitespaces = 0, 0, 0, 0
+    for line in infile.readlines():
+        for char in line:
+            if char == ' ':
+                whitespaces += 1
+            elif char.isupper():
+                uppercase += 1
+            elif char.islower():
+                lowercase += 1
+            elif char.isdigit():
+                digits += 1
+            
+    print("This file contains ", uppercase, " uppercase characters, ", lowercase, "lowercase characters, ", digits, 
+          "numbers, and", whitespaces, "whitespace characters.")
+
+def main():
+    infile = input('Please enter the name of the file you want broken down: ')
+    determines_stuff(infile)
+
+main()
