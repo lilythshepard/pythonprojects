@@ -1,0 +1,11 @@
+def get_list_sum(list):
+    sum = 0
+    for num in list:
+        sum += num
+    return sum
+
+def main():
+    list = [1, 2, 3, 4, 5]
+    sum = get_list_sum(list)
+    print("The sum of the list ", list, " is ", sum)
+main()
