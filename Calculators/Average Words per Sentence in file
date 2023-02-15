@@ -1,0 +1,15 @@
+def avg_word_per_sentence(filename):
+    infile = open(filename, 'r')
+    total_num_words, total_num_sentences = 0, 0
+    for sentence in infile:
+        words_in_sentence = len(sentence.split())
+        total_num_words += words_in_sentence
+        total_num_sentences += 1
+
+    print(format(total_num_words/total_num_sentences, '.2f'))
+
+def main():
+    infile = '8_ball_responses.txt'
+    print("The average number of words per sentence in the file", infile, " is: ")
+    avg_word_per_sentence(infile)
+main()
