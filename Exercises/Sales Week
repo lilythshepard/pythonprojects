@@ -1,0 +1,9 @@
+days_of_week = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+daily_sales = []
+total = 0
+for day in days_of_week:
+    sale = input("Please enter the the total sales for the day: $")
+    daily_sales.append(sale)
+    total += float(sale)
+print(daily_sales)
+print(total)
