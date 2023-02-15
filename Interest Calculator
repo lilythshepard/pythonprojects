@@ -1,0 +1,11 @@
+def future_value(present_val, monthly_interest, num_months):
+    future_val = present_val * (1 + monthly_interest)**num_months
+    return future_val
+def main():
+    present = float(input("Please enter the current value in the account: $ "))
+    monthly = float(input("Please enter the monthly interest on the account: $ "))
+    months = float(input("Please enter the number of months you intend to let it sit: "))
+    future_val = future_value(present, monthly, months)
+    print("The future value is $ ", format(future_val, ',.2f'))
+
+main()
