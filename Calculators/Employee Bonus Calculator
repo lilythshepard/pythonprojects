@@ -1,0 +1,53 @@
+class Employee:
+    def __init__(self, name, number):
+        self.__name = name
+        self.__number = number
+
+    def set_name(self, name):
+        self.__name = name
+
+    def set_number(self, number):
+        self.__number = number
+
+    def get_name(self):
+        return self.__name
+
+    def get_number(self):
+        return self.__number
+class ShiftSupervisor(Employee):
+    def __init__(self, name, number, ann_salary, ann_bonus):
+        Employee.__init__(self, name, number)
+        self.__ann_salary = ann_salary
+        self.__ann_bonus = ann_bonus
+
+    def set_annual_salary(self, ann_salary):
+        self.__ann_salary = ann_salary
+
+    def set_annual_bonus(self, ann_bonus):
+        self.__ann_bonus = ann_bonus
+
+    def get_annual_salary(self):
+        return self.__ann_salary
+
+    def get_annual_bonus(self):
+        return self.__ann_bonus
+
+
+import worker
+def main():
+    print("Please enter the following data: ")
+    name = input("Please enter the supervisor's name: ")
+    number = int(input("Please enter the supervisor's employee number: "))
+    annual_salary = int(input("Please enter the supervisor's annual salary: "))
+    annual_bonus = int(input("Please enter the supervisor's estimated annual bonus: "))
+
+    shift_sup = worker.ShiftSupervisor(name,number,annual_salary,annual_bonus)
+
+    print("Here is the information you entered: ")
+    print("--------------------------------------")
+    print("Name: ", shift_sup.get_name())
+    print("Employee Number: ", shift_sup.get_number())
+    print("Annual Salary: $", format(shift_sup.get_annual_salary(), ',.2f'), sep="")
+    print("Estimated Annual Bonus: $", format(shift_sup.get_annual_bonus(), ',.2f'), sep="")
+
+main()
