@@ -1,0 +1,14 @@
+def display_lines(filename, k_value):
+    file_handler = open(filename, 'r')
+    for i, line in enumerate(file_handler):
+        if i < k_value:
+            print(line)
+        else:
+            break
+    file_handler.close()
+    
+def main():
+    name = input("Please enter the name of a file: ")
+    display_lines(name, 5)
+    
+main()
