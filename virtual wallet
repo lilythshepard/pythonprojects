@@ -1,0 +1,20 @@
+penny = 1
+nickel = 5
+dime = 10
+quarter = 25
+dollar = 100
+pennies = int(input('enter the amount of pennies you want to add: '))
+nickels = int(input('enter the amount of nickels want to add: '))
+dimes = int(input('enter the amount of dimes you want to add: '))
+quarters = int(input('enter the amount of quarters you want to add: '))
+total_pennies = pennies * penny
+total_nickels = nickels * nickel
+total_dimes = dimes * dime
+total_quarters = quarters * quarter
+total_monies = total_dimes + total_quarters + total_nickels + total_pennies
+if total_monies == dollar:
+    print('you perfectly added up a dollar!')
+elif total_monies > dollar:
+    print('you entered more than a dollar!')
+else:
+    print('you entered less than a dollar. ')
