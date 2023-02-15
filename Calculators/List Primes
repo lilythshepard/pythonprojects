@@ -1,0 +1,16 @@
+from math import sqrt, floor
+
+def isPrime(x):
+    for i in range(2, floor(x)):
+        if x%i==0:
+            return False
+    return True
+
+def main():
+    n= int(input("Enter a number: "))
+    integer_list = range(2, n+1)
+    print("Prime numbers between 2 and {}: ".format(n), end='')
+    for i in integer_list:
+        if isPrime(i):
+            print(i, end='')
+main()
