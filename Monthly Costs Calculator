@@ -1,0 +1,11 @@
+def get_monthly_costs():
+    loan_payment = float(input('please enter your monthly loan payment  : $'))
+    insurance_payment = float(input('please enter your monthly insurance payment  : $'))
+    gas = float(input('please enter your monthly gas payment  : $'))
+    oil = float(input('please enter your monthly oil payment  : $'))
+    tires = float(input('please enter your monthly tires payment  : $'))
+    maintenance = float(input('please enter your monthly maintenance payment  : $'))
+    total_month_costs = loan_payment + insurance_payment + gas + oil + tires + maintenance
+    print('your total monthly automobile costs are: $', format(total_month_costs, ',.2f'))
+    print('your annual automobile costs are: $', format(total_month_costs*12, ',.2f'))
+get_monthly_costs()
