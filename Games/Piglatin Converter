@@ -1,0 +1,12 @@
+def english_to_piglatin(sentence):
+    words = sentence.split()
+    new_words = list()
+    for word in words:
+        new_word = word[1:] + word[0]+ 'AY'
+        new_words.append(new_word)
+    new_sentence = ' '.join(new_words)
+    print(new_sentence)
+def main():
+    words = input("Please enter the sentence you want to mangle: ")
+    english_to_piglatin(words)
+main()
