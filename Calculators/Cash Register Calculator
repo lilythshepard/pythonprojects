@@ -1,0 +1,76 @@
+class RetailItem:
+    def __init__(self, description, in_inventory, price):
+        self.__description = description
+        self.__in_inventory = in_inventory
+        self.__price = price
+
+    def set_description(self, description):
+        self.__description = description
+
+    def set_in_inventory(self, in_inventory):
+        self.__in_inventory
+
+    def set_price(self, price):
+        self.__price
+
+    def get_description(self):
+        return self.__description
+
+    def get_in_inventory(self):
+        return self.__in_inventory
+
+    def get_price(self):
+        return self.__price
+
+    def __str__(self):
+        return "Description: "+ self.__description+ \
+    "\nUnits in Inventory: "+ str(self.__in_inventory) + \
+    "\nPrice: $" + str(self.__price)
+
+class CashRegister:
+    def __init__(self, item_list = []):
+        self.item_list = item_list
+        self.list_sum = 0
+
+    def purchase_item(self, ri_obj):
+        self.item_list.append(ri_obj)
+        self.list_sum += ri_obj.get_price()
+
+    def get_total(self):
+        return self.list_sum
+
+    def show_items(self):
+        for item in range(len(self.item_list)):
+            print(self.item_list[item])
+            print("-------------------------------------")
+
+    def clear(self):
+        self.item_list.clear()
+
+from retailitem import RetailItem
+from cashreg import CashRegister
+
+def main():
+    register = CashRegister()
+
+    descr_list = ["Jacket", "Designer Jeans", "Shirt"]
+    units_list = [12, 40, 20]
+    price_list = [59.95, 34.95, 24.95]
+
+    for i in range(3):
+        descr = descr_list[i]
+        units = units_list[i]
+        price = price_list[i]
+
+        item = RetailItem(descr, units, price)
+
+        register.purchase_item(item)
+
+    print('---------------------------------------------')
+    print('         CASH REGISTER                       ')
+    print('----------------------------------------------')
+    register.show_items()
+    total = register.get_total()
+    print("The total is: $", format(total, '.2f'))
+
+main()
