@@ -1,0 +1,10 @@
+starting_org = int(input("Starting number of organisms: "))
+pop_increase = int(input("Average Daily Increase: "))
+num_days_left = int(input('Number of days to multiply: '))
+day = 1
+print("Day Approximate \t Population")
+print(day, '\t\t\t\t\t\t', starting_org)
+for i in range(num_days_left):
+    day += 1
+    starting_org += (starting_org * (pop_increase/100))
+    print(day, '\t\t\t\t\t\t', starting_org)
