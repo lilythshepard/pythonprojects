@@ -1,0 +1,17 @@
+def sum_of_file(filename):
+    file_handler = open(filename, 'r')
+    sum_numbers = 0
+    for line in file_handler:
+        try:
+            sum_numbers += int(line)
+        except ValueError:
+            continue
+    file_handler.close()
+    return  sum_numbers
+
+def main():
+    file = input("Enter the filename: ")
+    count = sum_of_file(file)
+    print("The sum of all the numbers in ", file, " is ", count)
+
+main()
