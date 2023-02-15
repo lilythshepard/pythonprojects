@@ -1,0 +1,8 @@
+def get_property_tax(actual_value):
+    assessment_value = actual_value * 0.60
+    divide_by_100 = assessment_value / 100
+    prop_tax = divide_by_100 * 0.72
+    print("The assessment value is $", format(assessment_value, ',.2f'), "and the property tax is $", format(prop_tax, ',.2f'))
+
+home_value = float(input("Please enter the actual value of the property to get the assessment value and property tax: $"))
+get_property_tax(home_value)
