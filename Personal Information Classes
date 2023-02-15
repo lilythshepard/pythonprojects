@@ -1,0 +1,75 @@
+class Personal_Info:
+    def __init__(self, name, address, age, phone_number):
+        self.name = name
+        self.address = address
+        self.age = age
+        self.phone_number = phone_number
+    def set_name(self, name):
+        self.name = name
+    def set_address(self, address):
+        self.address = address
+    def set_age(self, age):
+        self.age = age
+    def set_address(self, address):
+        self.address = address
+    def get_name(self, name):
+        return self.name
+    def get_address(self, address):
+        return self.address
+    def get_age(self, age):
+        return self.age
+    def get_phone_number(self, phone_number):
+        return self.phone_number
+
+import personal_info
+
+def my_info():
+    name = input('Enter my name: ')
+    address = input("Enter my address: ")
+    age = int(input("Enter my age: "))
+    phone_number = input("Enter my phone number: ")
+    my_info = personal_info.Personal_Info(name, address, age, phone_number)
+
+    print("My Data")
+    print("------------------------")
+    print("Name: ", my_info.get_name(name))
+    print("Age: ", my_info.get_age(age))
+    print("My Address: ", my_info.get_address(address))
+    print("Phone number: ", my_info.get_phone_number(phone_number))
+    print("-------------------------")
+
+def mums_info():
+    name = input('Enter Mums name: ')
+    address = input("Enter Mums address: ")
+    age = int(input("Enter Mums age: "))
+    phone_number = input("Enter Mums phone number: ")
+    moms_info = personal_info.Personal_Info(name, address, age, phone_number)
+
+    print("Mum's Data")
+    print("------------------------")
+    print("Name: ", moms_info.get_name(name))
+    print("Age: ", moms_info.get_age(age))
+    print("My Address: ", moms_info.get_address(address))
+    print("Phone number: ", moms_info.get_phone_number(phone_number))
+    print("-------------------------")
+
+def dads_info():
+    name = input('Enter Dads name: ')
+    address = input("Enter Dads address: ")
+    age = int(input("Enter Dads age: "))
+    phone_number = input("Enter Dads phone number: ")
+    pops_info = personal_info.Personal_Info(name, address, age, phone_number)
+
+    print("Dad's Data")
+    print("------------------------")
+    print("Name: ", pops_info.get_name(name))
+    print("Age: ", pops_info.get_age(age))
+    print("My Address: ", pops_info.get_address(address))
+    print("Phone number: ", pops_info.get_phone_number(phone_number))
+    print("-------------------------")
+
+def main():
+    my_info()
+    mums_info()
+    dads_info()
+main()
