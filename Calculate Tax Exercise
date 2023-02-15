@@ -1,0 +1,12 @@
+def calculate_tax(purchase):
+    state_tax = purchase * 0.05
+    county_tax = purchase * 0.025
+    full_cost = state_tax + county_tax + purchase
+    print("with state tax it costs $", format(state_tax + purchase, '.2f'), 'with county tax it costs $', format(county_tax + purchase, '.2f'))
+    print('the total cost of the item is $', format(full_cost, '.2f'))
+    return full_cost
+
+
+item = float(input("Please enter the price of the item you would like to purchase: "))
+
+calculate_tax(item)
