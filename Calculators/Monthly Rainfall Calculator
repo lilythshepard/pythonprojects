@@ -1,0 +1,19 @@
+def main():
+    rainfall_list = []
+    for month in range(12):
+        print("Enter the total rainfall for month #", month + 1, " : ", sep='', end='')
+        value = float(input())
+        rainfall_list.append(value)
+    total_rainfall = sum(rainfall_list)
+    average_rainfall = total_rainfall/len(rainfall_list)
+    year_dict = {1: 'jan', 2: 'feb', 3: 'mar', 4: 'apr', 5: 'may', 6: 'jun', 7: 'jul', 8: 'aug', 9: 'sep', 10: 'oct',
+                 11: 'nov', 12: 'dec'}
+    highest = rainfall_list.index(max(rainfall_list)) + 1
+    lowest = rainfall_list.index(min(rainfall_list)) + 1
+    print(rainfall_list)
+    print("The total rainfall this year was ", total_rainfall)
+    print("The average monthly rainfall was ", average_rainfall)
+    print("the month with the most rainfall was ", year_dict[highest])
+    print("the month with the lowest rainfall was ", year_dict[lowest])
+
+main()
