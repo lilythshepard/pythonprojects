@@ -1,0 +1,17 @@
+def createlist():
+    mylist = []
+    for i in range(21):
+        mylist.append(0)
+    return mylist
+
+f = open('GasPrices.txt', 'r')
+valuesum = createlist()
+countsum = createlist()
+for x in f:
+    year = int(x[6:10])
+    price = float(x[11:])
+    valuesum[year-1993]+= price
+    countsum[year-1993]+= 1.0
+
+for i in range(21):
+    print("The average price in ", i+1993, " was $", round(valuesum[i]/countsum[i], 2))
