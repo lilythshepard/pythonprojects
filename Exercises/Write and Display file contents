@@ -1,0 +1,20 @@
+def write_random_numbers(filename, how_many):
+    file_handler = open(filename, 'w')
+    for i in range(int(how_many)):
+        line = str(random.randint(1, 501))
+        file_handler.write(line + "\n")
+    file_handler.close()
+
+def display_file(filename):
+    file_handler = open(filename, 'r')
+    for i, line in enumerate(file_handler):
+        print("Line ", i, " : ", line)
+    file_handler.close()
+
+def main():
+    file = input("Enter the name of the file: ")
+    limit = input("Enter the number of random numbers to generate to the file: ")
+    write_random_numbers(file, limit)
+    print("File written successfully.")
+    display_file(file)
+main()
