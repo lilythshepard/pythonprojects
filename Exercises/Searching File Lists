@@ -1,0 +1,15 @@
+def main():
+    file = open('charge_accounts.txt', 'r')
+    charges = []
+    for line in file:
+        line = line[:-1]
+        charges.append(line)
+    file.close()
+
+    search_for = input('please enter a 7-digit charge number to search for: ')
+    if search_for in charges:
+        print('The number is valid!')
+    else:
+        print('The number is invalid.')
+
+main()
