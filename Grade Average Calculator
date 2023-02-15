@@ -1,0 +1,31 @@
+def calc_average(score1, score2, score3, score4, score5):
+    test_average = (score1 + score2 + score3 + score4 + score5) / 5
+    print("The average test score is: ", test_average, " points.")
+    return test_average
+
+
+def determine_grade(a, b, c, d, e):
+    for i in a, b, c, d, e:
+        if 90 <= i <= 100:
+            print("The grade of", i, "is an A!")
+        elif 80 <= i <= 89:
+            print("The grade of ", i, "is a B!")
+        elif 70 <= i <= 79:
+            print("The grade of ", i, "is a C!")
+        elif 60 <= i <= 69:
+            print("The grade of ", i, "is a D!")
+        else:
+            print("The test fails.")
+
+def main():
+    a = int(input("Please enter the score for the first test: "))
+    b = int(input("Please enter the score for the Second test: "))
+    c = int(input("Please enter the score for the third test: "))
+    d = int(input("Please enter the score for the forth test: "))
+    e = int(input("Please enter the score for the fifth test: "))
+
+    average = calc_average(a, b, c, d, e)
+    print("The total average of scores is: ", average)
+    determine_grade(a, b, c, d, e)
+
+main()
