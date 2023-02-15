@@ -1,0 +1,22 @@
+def get_value():
+    return int(input("Please enter a positive integer: "))
+
+def is_prime(number):
+    if number <= 1:
+        return False
+    else:
+        i = 2
+        while number > i:
+            if number % i == 0:
+                return False
+            else:
+                return True
+def print_value(boolean):
+    print(boolean)
+
+def main():
+    x = get_value()
+    boolean = is_prime(x)
+    print_value(boolean)
+
+main()
