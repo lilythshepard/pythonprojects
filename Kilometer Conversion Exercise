@@ -1,0 +1,8 @@
+def km_to_miles(km_input):
+    miles = km_input * 0.6214
+    print("That is ", format(miles, '.2f'), ' miles.')
+    return miles
+
+
+km_entered = int(input("Please enter the number of kilometers you would like to convert to miles: "))
+km_to_miles(km_entered)
