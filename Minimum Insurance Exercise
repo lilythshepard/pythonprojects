@@ -1,0 +1,7 @@
+def minimum_insurance(full_home_cost):
+    minimum = full_home_cost * 0.8
+    print("you should insure your home for, at minimum, $", format(minimum, ',.2f'))
+    return minimum
+
+house_cost = float(input("Please enter the full cost of your home to calculate the minumum insurance to buy: $"))
+minimum_insurance(house_cost)
