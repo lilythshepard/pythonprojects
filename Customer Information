@@ -1,0 +1,57 @@
+class Person:
+    def __init__(self, name, address, telephone_number):
+        self.__name = name
+        self.__address = address
+        self.__telephone_number = telephone_number
+    def set_name(self, name):
+        self.__name= name
+    def set_address(self, address):
+        self.__address = address
+    def set_telephone_number(self, telephone_number):
+        self.__telephone_number = telephone_number
+    def get_name(self):
+        return self.__name
+    def get_address(self):
+        return self.__address
+    def get_telephone_number(self):
+        return self.__telephone_number
+
+class Customer(Person):
+    def __init__(self, name, address, telephone_number, customer_number, mailing_list):
+        Person.__init__(self, name, address, telephone_number)
+        self.__customer_number = customer_number
+        self.__mailing_list = mailing_list
+    def set_customer_number(self, customer_number):
+        self.__customer_number = customer_number
+    def set_mailing_list(self, mailing_list):
+        self.__mailing_list = mailing_list
+    def get_customer_number(self):
+        return self.__customer_number
+    def get_mailing_list(self):
+        if self.__mailing_list == 1:
+            return "Yes! "
+        if self.__mailing_list == 2:
+            return  "No."
+
+import human
+def main():
+    print("Please enter some customer information: ")
+
+    name = input("Please enter the customer's name: ")
+    address = input("Please enter the customer's address: ")
+    telephone_number = input("Please enter the customer's telephone number: ")
+    customer_number = int(input("Please enter the customer's customer number: "))
+    mailing_list = int(input("Does the customer wish to be part of the mailing list? 1 for Yes, 2 for No: "))
+
+    cust = human.Customer(name, address, telephone_number, customer_number, mailing_list)
+    print()
+    print()
+    print("Here is the collected information: ")
+    print("-------------------------------------")
+    print("Customer Name: ", cust.get_name())
+    print("Customer's Address: ", cust.get_address())
+    print("Customer's Telephone Number: ", cust.get_telephone_number())
+    print("Customer's Customer Number: ", cust.get_customer_number())
+    print("If this person wishes to be on the mailing list: ", cust.get_mailing_list())
+
+main()
