@@ -1,0 +1,17 @@
+def is_larger(list, n):
+    high_list = []
+    for numbers in list:
+        if numbers > n:
+            high_list.append(numbers)
+        else:
+            continue
+    return high_list
+
+def main():
+    list = [12, 14, 16, 18, 21]
+    number = int(input('please enter a random number: '))
+    highest = is_larger(list, number)
+    print("the numbers in the given list that are larger than", number, "are: ", highest)
+
+main()
+
