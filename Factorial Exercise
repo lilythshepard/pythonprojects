@@ -1,0 +1,12 @@
+#ask the user for the number to solve (5, or 5!)
+number_to_solve = int(input('what number factorial do you wish to calculate'))
+#solve for the factorial
+#5! = 5 *4 *3 * 2 * 1
+# loop: [5,4,3,2,1]
+#loop: range(5, 0 , -1)
+#loop: range(number_to_solve, 0 , -1)
+solution = 1
+for num in range(number_to_solve, 0, -1):
+    solution *= num
+#display the answer
+print('the answer to ' , number_to_solve , '! is ' , format(solution , ',d') , '.' , sep='')
