@@ -1,0 +1,28 @@
+def main():
+    correct_answers = ['a', 'c', 'a', 'a', 'd', 'b', 'c', 'a', 'c', 'b', 'a', 'd', 'c', 'a', 'd', 'c', 'b', 'b', 'd',
+                       'a']
+    student_answers = []
+    file_manager = open('driversexam.txt', 'r')
+    for line in file_manager:
+        student_answers.append(line.rstrip())
+    file_manager.close()
+    grades = []
+    for i in range(20):
+        if student_answers[i] == correct_answers[i]:
+            grades.append(True)
+        else:
+            grades.append(False)
+    if grades.count(True)>= 15:
+        print("The student passed the exam.")
+    else:
+        print("The student failed the exam.")
+    print("The total number of correct answers was ", grades.count(True))
+    print("The total number of incorrect answers was ", grades.count(False))
+    incorrect_question = []
+    for index, value in enumerate(grades):
+        if value == False:
+            index += 1
+            incorrect_question.append(index)
+    print("these were the incorrectly answered questions: ", incorrect_question)
+        
+main()
