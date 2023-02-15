@@ -1,0 +1,13 @@
+def main():
+    repeat = 'y'
+    responses = []
+    infile = open('8_ball_responses.txt', 'r')
+    for resp in infile:
+        responses.append(resp.rstrip())
+    infile.close()
+    while repeat == 'y' or repeat == 'Y':
+        question = input("Please ask the magic 8-ball a question: ")
+        print("You asked: '", question, "'. Xanadu will answer...")
+        print("Xanadu says: '", random.choice(responses), "'.")
+        repeat = input("Would you like to ask another question? Type Y or y, or simply press enter to quit.")
+main()
