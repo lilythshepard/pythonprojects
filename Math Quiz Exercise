@@ -1,0 +1,13 @@
+def math_quiz():
+    print(" Welcome to the math quiz!")
+    print("Please add the following numbers:")
+    numberone = random.randint(1,1000)
+    numbertwo = random.randint(1,1000)
+    print(numberone, "+", numbertwo)
+    solution = numberone + numbertwo
+    student_answer = int(input("Please enter your answer: "))
+    if student_answer == solution:
+        print("Congrats, you got it right!")
+    else:
+        print("Sorry! The correct answer was: ", solution)
+math_quiz()
