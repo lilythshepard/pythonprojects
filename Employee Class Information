@@ -1,0 +1,57 @@
+class Employee:
+    def __init__(self, name, id_num, dept, job_title):
+        self.name = name
+        self.id_num = id_num
+        self.dept = dept
+        self.job_title = job_title
+
+    def set_name(self, name):
+        self.name = name
+
+    def set_id_num(self, id_num):
+        self.id_num = id_num
+
+    def set_dept(self, dept):
+        self.dept = dept
+
+    def set_job_title(self, job_title):
+        self.job_title = job_title
+
+    def get_name(self, name):
+        return self.name
+
+    def get_id_num(self, id_num):
+        return self.id_num
+
+    def get_dept(self, dept):
+        return self.dept
+
+    def get_job_title(self, job_title):
+        return self.job_title
+
+    def __str__(self):
+        return (
+                """
+            Name: %s
+            ID: %d
+            Department: %s
+            Job Title: %s
+            """ % (
+            self.name, self.id_num,
+            self.dept,
+            self.job_title
+        )
+        )
+import employee
+
+def main():
+    print("Creating 3 employees...")
+    e1 = employee.Employee("Susan Meyers", 47899, "Accounting", "Vice President")
+    e2 = employee.Employee("Mark Jones", 39119, "IT", "Programmer")
+    e3 = employee.Employee("Joy Rogers", 81774, "Manufacturing", "Engineer")
+    e_list = [e1, e2, e3]
+    print("Employee details")
+    print("-----------------------------------------------------------------")
+    for em in e_list:
+        print(em)
+main()
