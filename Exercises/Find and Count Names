@@ -12,3 +12,4 @@ def main():
     file = input("enter the name of the file: ")
     number_of_names = count_lines(file)
     print("The number of names in this list is: ", number_of_names)
+main()
