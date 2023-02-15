@@ -1,0 +1,14 @@
+def even_or_odd():
+    count = 0
+    even = 0
+    odd = 0
+    while count < 100:
+        number = random.randrange(1, 101)
+        count += 1
+        print(number)
+        if number % 2 != 0:
+            even += 1
+        else:
+            odd += 1
+    print("there were ", even, "even numbers in the list, and ", odd, "odd numbers.")
+even_or_odd()
