@@ -1,0 +1,75 @@
+class Question:
+    player_1 = 0
+    player_2 = 0
+
+    def __init__(self, question, a, ca):
+        self.question = question
+        self.a = a
+        self.ca = ca
+    def test1(self):
+        if self.ca.lower() == self.a:
+            print("Correct")
+            print()
+            Question.player_1+=1
+        else:
+            print("Wrong! The answer is ", self.a)
+            print()
+    def get_test1(self):
+        return Question.player_1
+    def test2(self):
+        if self.ca.lower() == self.a:
+            print("Correct!")
+            print()
+            Question.player_2 += 1
+        else:
+            print("Incorrect. The answer is ", self.a)
+            print()
+    def get_test2(self):
+        return Question.player_2
+    def __str__(self):
+        return "Player 1: " + str(Question.player_1) + "\n" + "Player 2: " + str(Question.player_2)
+
+import triviagame
+def main():
+    question_objects = []
+    questions = ["What is Sailor Moon's first name? \n"
+                 " (a) Serena \n (b) Usagi \n (c) Rei \n (d) Mina",
+                 "Who is Rei Himeno? \n "
+                 "(a) Sailor Mars \n (b) Sailor Mercury \n (c) Sailor Venus \n (d) Sailor Jupiter",
+                 "What is the name of the black cat in Sailor Moon? \n"
+                 " (a) Pumpkin \n (b) Artemis \n (c) Luna \n (d) Apollo",
+                 "Who is Tuxedo Mask? \n "
+                 "(a) Mamoru Chiba \n (b) John Davis \n (c) Henry Lewis \n (d) Peter Pan"]
+    answers = ["b", "a", "c", "a"]
+    print("Player 1 questions: ")
+    print()
+    for i in range(0, int(len(questions)/2), 1):
+        print("Question: ", i+1)
+        print(questions[i])
+        user_answer = input("Enter correct answer (a, b, c, d): ")
+
+        question = triviagame.Question(questions[i], answers[i], user_answer)
+        question_objects.append(question)
+        question.test1()
+    question_objects = []
+    print("-----------------------------------------------------")
+    print('Player 2 Questions: ')
+    print()
+    for i in range(int(len(questions)/2), len(questions), 1):
+        print("Question: ", i+1)
+        print(questions[i])
+        user_answer = input("Enter correct answer (a, b, c, d): ")
+
+        question = triviagame.Question(questions[i], answers[i], user_answer)
+        question_objects.append(question)
+        question.test2()
+
+    if question.get_test1() > question.get_test2():
+        print("Player 1 has won.")
+    elif question.get_test2() > question.get_test1():
+        print("Player 2 has won")
+    else:
+        print("Its a tie!")
+    print("Player 1 score: ", question.get_test1())
+    print("Player 2 score: ", question.get_test2())
+main()
