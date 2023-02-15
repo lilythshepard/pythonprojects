@@ -1,0 +1,58 @@
+class RetailItem:
+    def __init__(self, item_num, description, in_inventory, price):
+        self.item_num = item_num
+        self.description = description
+        self.in_inventory = in_inventory
+        self.price = price
+
+    def set_item_num(self, item_num):
+        self.item_num = item_num
+
+    def set_description(self, description):
+        self.description = description
+
+    def set_in_inventory(self, in_inventory):
+        self.in_inventory = in_inventory
+
+    def set_price(self, price):
+        self.price = price
+
+    def get_item_num(self, item_num):
+        return self.item_num
+
+    def get_description(self, description):
+        return self.description
+
+    def get_in_inventory(self, in_inventory):
+        return self.in_inventory
+
+    def get_price(self, price):
+        return self.price
+
+    def __str__(self):
+        return (
+                """
+            Item Number: %d
+            Description: %s
+            Units in inventory: %d
+            Price: %s
+            """ % (
+            self.item_num, self.description,
+            self.in_inventory,
+            self.price
+        )
+        )
+
+import retailitem
+
+def main():
+    print("Creating 3 Retail items...")
+    i1 = retailitem.RetailItem(1, "Jacket", 12, '$59.95')
+    i2 = retailitem.RetailItem(2, "Designer Jeans", 40, '$34.95')
+    i3 = retailitem.RetailItem(3, "Shirt", 20, '$24.95')
+    item_list = [i1, i2, i3]
+    print("Inventory details")
+    print("-----------------------------------------------------------------")
+    for items in item_list:
+        print(items)
+main()
