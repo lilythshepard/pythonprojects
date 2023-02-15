@@ -1,0 +1,5 @@
+full_name = input("Please enter your full name: ")
+split_name = full_name.split()
+print("The initials for your name are: ")
+for char in split_name:
+    print(char[0], '.', sep= '', end="")
