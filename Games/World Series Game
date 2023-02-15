@@ -1,0 +1,29 @@
+myfile = open('WorldSeriesWinners.txt', 'r')
+lines = myfile.read().splitlines()
+myfile.close()
+times_win_dict = {}
+winner_name_dict = {}
+count = 1
+for teams in lines:
+    if teams not in times_win_dict:
+        times_win_dict[teams] = count
+    else:
+        times_win_dict[teams] += 1
+year = 1903
+for teams in lines:
+    winner_name_dict[year] = teams
+    year += 1
+keep_going = 'y'
+while keep_going == 'y' or keep_going == 'Y':
+    year = int(input("Enter a year: "))
+    print("-------------------------------------")
+    if year >= 1903 and year <= 2008 and year != 1904 and year != 1994:
+        print("The team that won the world series that year was: ", winner_name_dict[year])
+        print("They have won ", times_win_dict[winner_name_dict[year]], " times.")
+    elif year == 1904 or year == 1994:
+        print("The world series didn't happen that year.")
+    else:
+        print("Please enter a year between 1903 and 2008 only.")
+    print()
+    keep_going = input("Want to continue? Y/N: ")
+    print()
