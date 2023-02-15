@@ -1,0 +1,54 @@
+def main():
+    number_dict = {str(i): 0 for i in range(1, 70)}
+    powerball_dict = {str(i) : 0 for i in range(1, 27)}
+    f = open('pbnumbers.txt', 'r')
+    for line in f:
+        line = [int(i) for i in line.split(' ')]
+        for i, num in enumerate(line):
+            if i == len(line)-1:
+                powerball_dict[str(num)] += 1
+            else:
+                number_dict[str(num)] += 1
+
+    number_dict = number_dict.items()
+    powerball_dict = powerball_dict.items()
+
+    number_list = sorted(number_dict, key=lambda x:x[1], reverse=True)
+    count = 0
+    print("10 most common numbers: ")
+    print("\t Frequency")
+    while count < 10:
+        print('{}:\t{}'.format(number_list[count][0], number_list[count][1]))
+        count += 1
+    print()
+    print()
+    count = 0
+
+    print("10 Least common numbers: ")
+    print("\t Frequency")
+    while count < 10:
+        if number_list[len(number_list)-count-1][1] != 0:
+            print('{}:\t {}'.format(number_list[len(number_list)-count-1][0], number_list[len(number_list)-count-1][1]))
+            count += 1
+    print()
+    print()
+
+    count = 0
+
+    print("10 most overdue numbers:")
+    print("\t frequency")
+    while count < 10:
+        print('{}:\t {}'.format(number_list[len(number_list) - count - 1][0],
+                                number_list[len(number_list) - count - 1][1]))
+        count += 1
+    print("frequency of numbers 1-69")
+    print("\t frequency")
+    for num, val in number_dict:
+        print("{}:\t{}".format(num, val))
+    print()
+    print()
+    print("freq of each number 1-26")
+    print("\t frequency")
+    for num, val in powerball_dict:
+        print("{}:\t{}".format(num, val))
+main()
