@@ -1,0 +1,6 @@
+names = ['John', 'kasey', 'ella', 'mary', 'Ruby']
+search_name = input("Enter the name you're looking for:"
+if search_name in names:
+    print("Hello, ", search_name, ".")
+else:
+    print("No", search_name, " found.")
