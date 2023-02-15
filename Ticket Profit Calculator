@@ -1,0 +1,15 @@
+def tickets_sold(a, b, c):
+    revenuea = a * 20
+    revenueb = b * 15
+    revenuec = c * 10
+    totaL_revenue = revenuea + revenueb + revenuec
+    print("The total revenue from tickets was $", format(totaL_revenue, ',.2f'))
+    return totaL_revenue
+
+def main():
+    tickets_a = int(input("How many class A seats were sold? "))
+    tickets_b = int(input("How many class B seats were sold? "))
+    tickets_c = int(input("How many class C seats were sold? "))
+    tickets_sold(tickets_a, tickets_b, tickets_c)
+
+main()
