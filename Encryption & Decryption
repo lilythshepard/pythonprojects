@@ -1,0 +1,51 @@
+def main():
+    codes = {'A': '!', 'a': '~', 'B': '@', 'b': '#', 'C': '$', 'c': '%', 'D': '^', 'd': '&', 'E': '(', 'e': ')', 'F': '-',
+             'f': '_', 'G': '+', 'g': '=', 'H': '[', 'h': '{', 'I': ']', 'i': '}', 'J': ';', 'j': ':', 'K': '|', 'k': ',',
+             'L': '<', 'l': '.', 'M': '>', 'm': '/', 'N': '?'}
+    encryptor(codes)
+
+def encryptor(codes):
+    filename = input("Enter the name of the file you wish to encrypt: ")
+    infile = open(filename, 'r')
+    encrypted = input("Input the name of the encrypted file: ")
+    lines = infile.readlines()
+    infile.close()
+    outfile = open(encrypted, 'w')
+    for item in lines:
+        for character in item:
+            if character in codes:
+                outfile.write(codes[character])
+            else:
+                outfile.write(character)
+    print("File encrypted successfully. ")
+    outfile.close()
+main()
+
+def main2():
+    codes = {'A': '!', 'a': '~', 'B': '@', 'b': '#', 'C': '$', 'c': '%', 'D': '^', 'd': '&', 'E': '(', 'e': ')',
+             'F': '-',
+             'f': '_', 'G': '+', 'g': '=', 'H': '[', 'h': '{', 'I': ']', 'i': '}', 'J': ';', 'j': ':', 'K': '|',
+             'k': ',',
+             'L': '<', 'l': '.', 'M': '>', 'm': '/', 'N': '?'}
+    decrypt(codes)
+
+def decrypt(codes):
+    filename = input("Enter the name of the file you want decrypted: ")
+    textfile = open(filename, 'r')
+    lines = textfile.readlines()
+    textfile.close()
+    decrypted = open('uncoded.txt', 'w')
+    listopairs = codes.items()
+    for item in lines:
+        for ch in item:
+            for keyvalue in listopairs:
+                if ch == keyvalue[1]:
+                    decrypted.write(keyvalue[0])
+                    found = True
+                    break
+                else:
+                    found = False
+            if not found:
+                decrypted.write(ch)
+    decrypted.close()
+main2()
